@@ -9,7 +9,7 @@ const initialState={
 }
 export const fetchCart=createAsyncThunk("fetchCart" ,()=>{
     return  axios.get("http://localhost:5000/carts").then((res)=>{
-         console.log(res.data)
+       
         return res.data
     }).catch((err)=>{
         console.log(err.message)
@@ -17,11 +17,20 @@ export const fetchCart=createAsyncThunk("fetchCart" ,()=>{
 })
 export const postCart=createAsyncThunk("fetchCart" ,(data)=>{
     return  axios.post("http://localhost:5000/carts",data).then((res)=>{
-        // console.log(res.data)
+       
         return res.data
     }).catch((err)=>{
         console.log(err.message);
-        console.log(data)
+     
+    })
+})
+export const deleteCart=createAsyncThunk("deleteCart" ,(id)=>{
+    return  axios.put(`http://localhost:5000/carts/${id}`).then((res)=>{
+       
+        return res.data
+    }).catch((err)=>{
+        console.log(err.message);
+     
     })
 })
 

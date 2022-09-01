@@ -24,6 +24,7 @@ function Header() {
         <Tab sx={{fontSize:"16px"}} label="Men" />
         <Tab sx={{fontSize:"16px"}} label="Women" />
         <Tab sx={{fontSize:"16px"}} label="Electronics" />
+        <Link to="/cart"><i class="fa-sharp fa-solid fa-cart-plus"><Tab sx={{fontSize:"16px"}} label="" /></i></Link>
       </Tabs>
     </Box>
 

@@ -43,13 +43,13 @@ function Home(){
                              <Link to={`products/${e._id}`} style={{ textDecoration: "none" }}>
     
                              <img style={{width:"100%",height:"75%"}} src={e.image1} alt="" />
-                       <h4 style={{textDecoraton:"none"}}> Name : {e.title}</h4>
+                       <h4 style={{textDecoraton:"none"}}> Title : {e.title}</h4>
                        <h4  style={{textDecoraton:"none"}}>Price : { e.price}</h4>
     
                        <button
                       style={{
                         width: "100%",
-                        backgroundColor: "rgb(77,166,255)",
+                        backgroundColor: "#ffd84d",
                         height:"40px",
                         fontSize: "20px",
                         marginTop:"5px",

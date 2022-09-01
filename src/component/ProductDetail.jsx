@@ -3,7 +3,7 @@ import Header from "./Header";
 import axios from "axios";
 import { useDispatch,useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { postCart } from "../Redux-toolkit/Cart-toolkit";
+import { fetchCart, postCart } from "../Redux-toolkit/Cart-toolkit";
 import { useNavigate } from "react-router-dom";
 // import { useSelector } from "react-redux";
 
@@ -11,7 +11,9 @@ import { useNavigate } from "react-router-dom";
 const ProductDetails = () => {
 
     const data = useSelector((store)=>store.product.data)
-  const { id } = useParams();
+    const cartData = useSelector((store) => store.cart.data);
+
+    const { id } = useParams();
   const navigate=useNavigate();
   const dispatch=useDispatch()
   // console.log(id)
@@ -46,6 +48,7 @@ const  [product,setproduct]=useState({})
       });
       setproduct({...res.data})
 }
+
 data.findIndex((e)=>
 {
     if(e.id==id)
@@ -56,7 +59,7 @@ data.findIndex((e)=>
   useEffect(()=>
   {
     fetchProductDetails();
-    // dispatch(fetchSelectedProduct(id));
+   dispatch(fetchCart())
   },[])
 
  
@@ -148,7 +151,7 @@ data.findIndex((e)=>
              marginLeft:"25px"
            }}
            onClick={() => {
-           dispatch(postCart(product))
+            dispatch(postCart(product))
            }}
          >
            Add To Cart
