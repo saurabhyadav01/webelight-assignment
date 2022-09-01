@@ -1,27 +1,34 @@
-import * as React from 'react';
+import React from 'react';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
 import { Link } from 'react-router-dom';
-function Header() {
-  
 
-  return (
-    <Box sx={{ width: '100%' }}>
-      <Tabs
-      sx={{backgroundColor:"#f6a602" ,fontSize:"40px"}}
+function Header() {
  
-      
-        aria-label="Tabs where selection follows focus"
-        selectionFollowsFocus
+
+  function handelChange(e)
+  {
+
+  }
+  return (
+   <>
+    <Box sx={{ width: '100%',margin:"auto" }}>
+      <Tabs
+       sx={{backgroundColor:"rgb(77,166,255)" ,fontSize:"40px"}}
+        value={1}
+        onChange={handelChange}
       >
-       
-        <Tab sx={{backgroundColor:"#f6a602" ,fontSize:"20px",textDecoration:"none"}} label="My Shop" />
-        <Tab sx={{backgroundColor:"#f6a602" ,fontSize:"20px"}} label="Men" />
-        <Tab sx={{backgroundColor:"#f6a602" ,fontSize:"20px"}} label="Women" />
-        <Tab sx={{backgroundColor:"#f6a602" ,fontSize:"20px"}} label="Electronics" />
+        
+        <Tab sx={{ fontSize:"16px",textDecoration:"none"}}  label="My Shop" />
+        <Tab sx={{fontSize:"16px"}} label="Men" />
+        <Tab sx={{fontSize:"16px"}} label="Women" />
+        <Tab sx={{fontSize:"16px"}} label="Electronics" />
       </Tabs>
     </Box>
+
+
+</>
   );
 }
 
