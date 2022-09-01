@@ -3,7 +3,7 @@ import Header from "./Header";
 import axios from "axios";
 import { useDispatch,useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-
+import { postCart } from "../Redux-toolkit/Cart-toolkit";
 import { useNavigate } from "react-router-dom";
 // import { useSelector } from "react-redux";
 
@@ -12,7 +12,8 @@ const ProductDetails = () => {
 
     const data = useSelector((store)=>store.product.data)
   const { id } = useParams();
-  const navigate=useNavigate()
+  const navigate=useNavigate();
+  const dispatch=useDispatch()
   // console.log(id)
 
   //console.log(product.products)
@@ -147,15 +148,7 @@ data.findIndex((e)=>
              marginLeft:"25px"
            }}
            onClick={() => {
-            let itemIndex=data.findIndex((e)=>e.id==product.id)
-            console.log(itemIndex)
-            if(itemIndex!=-1){
-              alert("product is already in the cart !!")
-              return 
-            }
-            // if there is no duplicate product then add it to cart
-        //    dispatch(add_cart_item (product));
-           alert(`${product.title} added in the cart !!`)
+           dispatch(postCart(product))
            }}
          >
            Add To Cart

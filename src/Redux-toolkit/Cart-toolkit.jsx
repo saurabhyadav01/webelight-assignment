@@ -7,16 +7,27 @@ const initialState={
     error:false
 
 }
-export const fetchCart=createAsyncThunk("user/fetchCart" ,()=>{
-    return  axios.get("https://ecommrcebackend.herokuapp.com/products").then((res)=>{
-        // console.log(res.data)
+export const fetchCart=createAsyncThunk("fetchCart" ,()=>{
+    return  axios.get("http://localhost:5000/carts").then((res)=>{
+         console.log(res.data)
         return res.data
     }).catch((err)=>{
         console.log(err.message)
     })
 })
+export const postCart=createAsyncThunk("fetchCart" ,(data)=>{
+    return  axios.post("http://localhost:5000/carts",data).then((res)=>{
+        // console.log(res.data)
+        return res.data
+    }).catch((err)=>{
+        console.log(err.message);
+        console.log(data)
+    })
+})
 
-const productSlice= createSlice({
+
+
+const cartSlice= createSlice({
     name:"product",
     initialState,
     extraReducers:(builder)=>{
@@ -33,4 +44,4 @@ const productSlice= createSlice({
        })
     }
 })
-export default productSlice.reducer
+export default cartSlice.reducer

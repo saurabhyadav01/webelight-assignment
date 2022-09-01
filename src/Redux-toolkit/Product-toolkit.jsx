@@ -7,8 +7,8 @@ const initialState={
     error:false
 
 }
-export const fetchProduct=createAsyncThunk("user/fetchProduct" ,()=>{
-    return  axios.get("https://ecommrcebackend.herokuapp.com/products").then((res)=>{
+export const fetchProduct=createAsyncThunk("fetchProduct" ,()=>{
+    return  axios.get("http://localhost:5000/products").then((res)=>{
         // console.log(res.data)
         return res.data
     }).catch((err)=>{

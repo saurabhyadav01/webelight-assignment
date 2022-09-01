@@ -20,7 +20,7 @@ function Header() {
         onChange={handelChange}
       >
         
-        <Tab sx={{ fontSize:"16px",textDecoration:"none"}}  label="My Shop" />
+        <Link to="/"><Tab sx={{ fontSize:"16px",textDecoration:"none"}}  label="My Shop" /></Link>
         <Tab sx={{fontSize:"16px"}} label="Men" />
         <Tab sx={{fontSize:"16px"}} label="Women" />
         <Tab sx={{fontSize:"16px"}} label="Electronics" />
