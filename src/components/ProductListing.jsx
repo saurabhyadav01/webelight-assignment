@@ -58,7 +58,7 @@ function ProductListing(){
                 <div><select style={{width:"200px",height:"50px",margin:"1%"}} name="select category" id="" onChange={CategoryHandler}>
                 <option style={{width:"100%",height:"30px"}} value="men's clothing">Men</option>
                 <option   style={{width:"100%",height:"30px"}} value="women's clothing">Women</option>
-                <option  style={{width:"100%",height:"30px"}}  value="cosmetices">Cosmetics</option>
+                <option  style={{width:"100%",height:"30px"}}  value="cosmetices">Home Appanlces</option>
                 </select></div>
                 
      

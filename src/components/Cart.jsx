@@ -5,7 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { Box, Button, getFormControlLabelUtilityClasses, Typography } from "@mui/material";
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
-import { deleteItem } from "../Redux-toolkit/Cart-toolkit";
+import { decrementQuantity, deleteItem, incrementQuantity } from "../Redux-toolkit/Cart-toolkit";
 import { deleteCart, fetchCart } from "../Redux-toolkit/Cart-toolkit";
 import Footer from "./Footer";
 
@@ -13,6 +13,8 @@ import Footer from "./Footer";
  const  Cart=()=>
 {
   const cartData = useSelector((store)=>store.cart.data);
+  const qua = useSelector((store)=>store)
+  console.log(qua)
   const navigate=useNavigate()
   const dispatch=useDispatch()
 console.log(cartData)
@@ -20,7 +22,7 @@ console.log(cartData)
   const [incProduct, setIncProduct] = useState(1);
   const [data,setData]=useState([]);
   let id=""
- 
+ console.log(data)
   const numberOfItem = cartData.length;
   let totalPrice = 0;
   let tribePrice = 0;
@@ -78,7 +80,7 @@ console.log(cartData)
           <div
             style={{
               border: ".5px solid gray",
-              backgroundColor: "#ffffe0",
+              backgroundColor: "#4DA6FF",
               marginTop: "15px",
               height:"30px",
               
@@ -118,7 +120,8 @@ console.log(cartData)
                   <button
                     style={{ width: "40px" }}
                     onClick={() => {
-                      handledec(e.id);
+                      handledec(e._id);
+                
                     }}
                   >
                     -
@@ -157,7 +160,7 @@ console.log(cartData)
             style={{
               border: ".5px solid white ",
               borderRadius: "5px 5px 1px 1px",
-              backgroundColor: "#ffa500",
+              backgroundColor: "#4DA6FF",
               height:"30px"
             }}
           >
@@ -178,11 +181,16 @@ console.log(cartData)
           <h4 style={{paddingTop:"10px"}}> Delivery Price: {"Free"}</h4>
           <h4 style={{paddingTop:"10px"}}>Payable Amount :{totalPrice - discount}</h4>
 
-        <Box style={{display:"flex"}}>
-       
-         
     
-        </Box>
+          <button
+                    onClick={() => {
+                      // handleDelete(e._id);
+          alert("payment")
+     
+                    }}
+                  >
+                    Payment
+                  </button>
         </div>
       </div>
     

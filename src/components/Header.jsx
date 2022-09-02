@@ -9,7 +9,7 @@ function Header()
     return(
         <>
         <div style={{display:"flex",justifyContent:'space-between',textDecoration: "none"}} className="main-header-div"><div style={{marginLeft:"5%"}}> <Link to={`/`} style={{ textDecoration: "none" }}>
-        <h1 style={{textDecoration: "none"}}>  My Shop </h1> </Link>
+        <h1 style={{textDecoration: "none"}}> Shop </h1> </Link>
     </div>
          <div  style={{marginRight:"5%"}}>
          <Link to={`/Cart`} style={{ textDecoration: "none" }}>

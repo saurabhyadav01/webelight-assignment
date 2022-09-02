@@ -61,9 +61,20 @@ export const deleteCart=createAsyncThunk("deleteCart" ,(id)=>{
     return cart.filter((e)=>e.id==id?e.currentQuantity++:e)
      
   }
-  export const decrementQuantity=(cart,id)=>{
-  
-    return cart.filter((e)=>e.id==id && e.currentQuantity>1?e.currentQuantity--:e)
+  export const decrementQuantity=(id)=>{
+    axios.get("http://localhost:5000/carts").then((res)=>{
+       
+      const d=res.data.filter((x)=>
+      {
+        return res.data.filter((e)=>e._id==id?e.currentQuantity++:e)
+      })
+       console.log("quantity",d)
+    
+       return d
+     }).catch((err)=>{
+         console.log(err.message)
+     })
+   
      
   }
   
