@@ -1,9 +1,48 @@
 
 
 
+
+
+link{
+  text-decoration: none;
+}
+.flex
+{
+  display: flex;
+}
+.left
+{
+ width: 50%;
+  margin-right: auto;
+}
+
+.flex>div>h4{
+  margin: 20px;
+  margin-top: 40px;
+}
+.flex>div>button
+{
+  background-color: transparent;
+  color: black;
+  font-size: 20px;
+  padding: 5px;;
+  width: 100px;
+  border-radius: 20px;
+  margin-top: 35px;
+
+}
+
 body{
   padding: 0px;
   margin: 0px;
+}
+.App {
+  text-align: center;
+}
+.items>p,h4
+{
+  margin-left: 30px;
+  
 }
 
 link{
@@ -21,27 +60,11 @@ link{
 
 .flex>div>h4{
   margin: 20px;
-  
+  margin-top: 40px;
 }
-.flex>div>button
+product-item
 {
-  background-color: transparent;
-  color: black;
-  font-size: 20px;
-  padding: 5px;;
-  width: 100px;
-  border-radius: 20px;
-
-
+  height: 340px;
+  border: 1px solid gray;
+  box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
 }
-
-
-.App {
-  text-align: center;
-}
-
-
-link{
-  text-decoration: none;
-}
-

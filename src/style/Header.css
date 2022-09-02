@@ -1,0 +1,34 @@
+*{
+    margin: 0px;
+    padding:0 px;
+  }
+.main-header-div
+{
+  background-color: #4DA6FF;
+   
+    width: 100%;
+    height: 50px;
+
+    margin: auto;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.main-header-div>h2
+{
+padding:.5%;
+
+}
+i{
+  padding-top:2%;
+  margin: 2%;
+}
+.header-background
+{
+    width: 100%;
+    margin: auto;
+    height: 350px;
+   
+}.header-background>img
+{
+    width: 100%;
+    margin: auto;
+}

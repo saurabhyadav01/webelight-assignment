@@ -1,19 +1,18 @@
 import React from "react";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Cart from "../component/Cart";
-
-import Landing from "../component/Landing";
-import ProductDetails from "../component/ProductDetail";
+import Cart from "../components/Cart.jsx";
+import Landing from "../components/Landing";
+import ProductDetails from "../components/ProductDetails";
 const AllRoutes=()=>
 {
     return (
         <>
      
       <Routes>
-       <Route path="/" element={<Landing />}/>
-       <Route path="products/:id" element={<ProductDetails/>} />
-       <Route path="/cart" element={<Cart/>}/>
+       <Route path="/" element={<Landing />}></Route>
+       <Route path="products/:id" element={<ProductDetails/>}></Route>
+       <Route path="cart" element={<Cart/>}></Route> 
       </Routes> 
         </>
     )

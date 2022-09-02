@@ -3,19 +3,18 @@ import Header from "./Header";
 import axios from "axios";
 import { useDispatch,useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { fetchCart, postCart } from "../Redux-toolkit/Cart-toolkit";
+import { addToCart } from "../Redux-toolkit/Cart-toolkit";
 import { useNavigate } from "react-router-dom";
+import { postCart } from "../Redux-toolkit/Cart-toolkit";
 // import { useSelector } from "react-redux";
 
 
 const ProductDetails = () => {
-
-    const data = useSelector((store)=>store.product.data)
-    const cartData = useSelector((store) => store.cart.data);
-
-    const { id } = useParams();
-  const navigate=useNavigate();
-  const dispatch=useDispatch()
+  // const {cartData} = useSelector((state) => state.CartReducer);
+  // console.log("CARTDATA",cartData)
+  const dispatch = useDispatch();
+  const { id } = useParams();
+  const navigate=useNavigate()
   // console.log(id)
 
   //console.log(product.products)
@@ -36,12 +35,11 @@ const  [product,setproduct]=useState({})
       title: product.title,
       tribe: product.tribe,
     };
-
-  };
- 
+  }
+  
   const fetchProductDetails = async () => {
     const res = await axios
-      .get(`https://ecommrcebackend.herokuapp.com/products/${id}`)
+      .get(`http://localhost:5000/products/${id}`)
 
       .catch((err) => {
         //console.log(err)
@@ -49,17 +47,10 @@ const  [product,setproduct]=useState({})
       setproduct({...res.data})
 }
 
-data.findIndex((e)=>
-{
-    if(e.id==id)
-    {
-        console.log(e)
-    }
-})
   useEffect(()=>
   {
     fetchProductDetails();
-   dispatch(fetchCart())
+    // dispatch(fetchSelectedProduct(id));
   },[])
 
  
@@ -74,7 +65,7 @@ data.findIndex((e)=>
         style={{
           border: "1px solid gray",
           width: "80%",
-          height: "650px",
+          height: "600px",
           margin: "auto",
           display: "flex",
           marginTop: "20PX",
@@ -143,7 +134,7 @@ data.findIndex((e)=>
            style={{
           
              width:"860%",
-             backgroundColor: "#ffd84d",
+             backgroundColor: "#4DA6FF",
              height: "35px",
              fontSize: "20px",
              marginTop:"20%",
@@ -151,7 +142,11 @@ data.findIndex((e)=>
              marginLeft:"25px"
            }}
            onClick={() => {
-            dispatch(postCart(product))
+          
+            // if there is no duplicate product then add it to cart
+      //  addToCart()
+          dispatch(postCart(product));
+          
            }}
          >
            Add To Cart

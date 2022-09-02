@@ -1,11 +1,13 @@
 import { configureStore } from "@reduxjs/toolkit";
 import productReducer from "../Product-toolkit"
 import reduxLogger from "redux-logger";
-import cartReducer from "../Cart-toolkit"
 
-export const store = configureStore({
+import CartReducer from "../Cart-toolkit"
+const store = configureStore({
   reducer: {
    product:productReducer,
-   cart:cartReducer
+   cart:CartReducer
   }
 });
+
+export default store
