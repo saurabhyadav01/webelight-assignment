@@ -41,7 +41,7 @@ export const deleteCart=createAsyncThunk("deleteCart" ,(id)=>{
     let rest_cart_data = cart.filter((e) => e.id != id);
     console.log("cart after deleting data", cart.cartData);
     console.log("rest",rest_cart_data)
-  
+  alert("Product deleted")
     return rest_cart_data;
   };
 
