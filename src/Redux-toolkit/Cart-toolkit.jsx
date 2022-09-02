@@ -8,7 +8,7 @@ const initialState={
 
 }
 export const fetchCart=createAsyncThunk("fetchCart" ,()=>{
-    return  axios.get("http://localhost:5000/carts").then((res)=>{
+    return  axios.get("https://web-elight.herokuapp.com/carts").then((res)=>{
        
         return res.data
     }).catch((err)=>{
@@ -17,7 +17,7 @@ export const fetchCart=createAsyncThunk("fetchCart" ,()=>{
 })
 
 export const postCart=createAsyncThunk("postCart" ,(cartD)=>{
-    return  axios.post("http://localhost:5000/carts",cartD).then((res)=>{
+    return  axios.post("https://web-elight.herokuapp.com/carts",cartD).then((res)=>{
        
     alert("product added in cart")
         return res.data
@@ -27,7 +27,7 @@ export const postCart=createAsyncThunk("postCart" ,(cartD)=>{
     })
 })
 export const deleteCart=createAsyncThunk("deleteCart" ,(id)=>{
-    return  axios.put(`http://localhost:5000/carts/${id}`).then((res)=>{
+    return  axios.put(`https://web-elight.herokuapp.com/${id}`).then((res)=>{
        console.log("res.data")
         return res.data
     }).catch((err)=>{
@@ -62,7 +62,7 @@ export const deleteCart=createAsyncThunk("deleteCart" ,(id)=>{
      
   }
   export const decrementQuantity=(id)=>{
-    axios.get("http://localhost:5000/carts").then((res)=>{
+    axios.get("https://web-elight.herokuapp.com/carts").then((res)=>{
        
       const d=res.data.filter((x)=>
       {

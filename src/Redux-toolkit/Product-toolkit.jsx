@@ -16,7 +16,7 @@ export const fetchProduct=createAsyncThunk("fetchProduct" ,()=>{
     })
 })
 export const category=createAsyncThunk("category" ,(e)=>{
-    return  axios.get("http://localhost:5000/products").then((res)=>{
+    return  axios.get("https://web-elight.herokuapp.com/products").then((res)=>{
        //console.log(res.data,"sdsd",e)
      const d=res.data.filter((x)=>
      {
@@ -32,7 +32,7 @@ export const category=createAsyncThunk("category" ,(e)=>{
     })
 })
 export const filterprice=createAsyncThunk("filterprice" ,(e)=>{
-    return  axios.get("http://localhost:5000/products").then((res)=>{
+    return  axios.get("https://web-elight.herokuapp.com/products").then((res)=>{
        console.log(typeof(e))
      const d=res.data.filter((x)=>
      {

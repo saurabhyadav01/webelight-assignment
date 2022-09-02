@@ -7,7 +7,7 @@ import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { decrementQuantity, deleteItem, incrementQuantity } from "../Redux-toolkit/Cart-toolkit";
 import { deleteCart, fetchCart } from "../Redux-toolkit/Cart-toolkit";
-import Footer from "./Footer";
+
 
 
  const  Cart=()=>
