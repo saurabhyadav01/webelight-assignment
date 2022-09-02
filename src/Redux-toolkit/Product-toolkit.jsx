@@ -8,7 +8,7 @@ const initialState={
 
 }
 export const fetchProduct=createAsyncThunk("fetchProduct" ,()=>{
-    return  axios.get("http://localhost:5000/products").then((res)=>{
+    return  axios.get("https://web-elight.herokuapp.com/products").then((res)=>{
         console.log("res.data")
         return res.data
     }).catch((err)=>{

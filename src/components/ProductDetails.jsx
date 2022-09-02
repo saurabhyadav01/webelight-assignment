@@ -39,7 +39,7 @@ const  [product,setproduct]=useState({})
   
   const fetchProductDetails = async () => {
     const res = await axios
-      .get(`http://localhost:5000/products/${id}`)
+      .get(`https://web-elight.herokuapp.com/products/${id}`)
 
       .catch((err) => {
         //console.log(err)

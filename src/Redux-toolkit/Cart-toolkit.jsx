@@ -27,7 +27,7 @@ export const postCart=createAsyncThunk("postCart" ,(cartD)=>{
     })
 })
 export const deleteCart=createAsyncThunk("deleteCart" ,(id)=>{
-    return  axios.put(`https://web-elight.herokuapp.com/${id}`).then((res)=>{
+    return  axios.put(`https://web-elight.herokuapp.com/carts/${id}`).then((res)=>{
        console.log("res.data")
         return res.data
     }).catch((err)=>{
